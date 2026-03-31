@@ -1,0 +1,14 @@
+node_modules
+.pnpm-store
+dist
+.git
+.env
+.env.local
+.DS_Store
+*.log
+prof pics/
+files.zip
+.claude/
+.vscode/
+.idea/
+coverage/
