@@ -72,7 +72,7 @@ export function Navigation() {
                 isHome ? "text-white" : "text-foreground"
               }`}
             >
-              Prof. Menyeh
+              Prof. A. Menyeh
             </span>
           </Link>
 
@@ -119,9 +119,9 @@ export function Navigation() {
                 isHome ? "text-white/40" : "text-muted-foreground"
               }`}
             >
-              <div>Geophysics</div>
-              <div>KNUST</div>
-              <div>Ghana</div>
+              <div>Geophysics &</div>
+              <div>Earth Sciences</div>
+              <div>KNUST, Ghana</div>
             </div>
           </div>
 

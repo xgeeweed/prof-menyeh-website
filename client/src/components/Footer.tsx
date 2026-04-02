@@ -30,7 +30,7 @@ export function Footer() {
           <div>
             <div className="text-white/80 text-sm tracking-[0.2em] uppercase mb-4">Prof. Aboagye Menyeh</div>
             <p className="text-white/30 text-sm leading-relaxed max-w-[280px]">
-              Professor of Geophysics at KNUST. Pioneering researcher in mineral magnetism. Foundation Provost of the College of Science.
+              Professor of Geophysics at KNUST. Pioneering researcher in rock magnetism, mineral and groundwater exploration, and environmental geophysics. Foundation Provost of the College of Science.
             </p>
           </div>
 

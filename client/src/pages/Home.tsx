@@ -4,7 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { HeroScene } from "@/components/HeroScene";
 import { DottedSurface } from "@/components/ui/dotted-surface";
-import { ArrowDown, Droplets, Mountain, Globe } from "lucide-react";
+import { ArrowDown, Droplets, Mountain, Globe, Magnet, FlaskConical, MapPin } from "lucide-react";
 import { Link } from "wouter";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -109,8 +109,7 @@ export default function Home() {
             <p
               className="text-lg md:text-xl text-white/50 mt-8 max-w-2xl mx-auto leading-relaxed font-light"
             >
-              Uncovering the magnetic secrets of the Earth to power exploration,
-              sustainability, and scientific advancement in Ghana and beyond.
+              Rock magnetism. Mineral exploration. Groundwater discovery. Environmental protection. Four decades of geophysical research advancing science and development in Ghana.
             </p>
 
             <div className="mt-12 flex justify-center gap-4">
@@ -217,60 +216,108 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── APPLIED GEOPHYSICS ── */}
+        {/* ── RESEARCH PILLARS ── */}
         <section
           ref={(el) => { sectionRefs.current[1] = el; }}
           className="relative py-32 bg-[#0a1628]"
         >
           <div className="container max-w-6xl mx-auto px-6">
-            <div className="text-center max-w-3xl mx-auto mb-20">
+            <div className="max-w-3xl mb-20">
               <div data-animate className="inline-block px-4 py-1.5 rounded-full border border-[#c8a44e]/30 text-[#c8a44e] text-xs tracking-[0.2em] uppercase mb-8">
-                Applied Geophysics
+                Areas of Expertise
               </div>
               <h2 data-animate className="text-4xl md:text-5xl font-light text-white tracking-tight mb-6">
-                Geophysical Exploration
+                Four Pillars of Research
               </h2>
               <p data-animate className="text-lg text-white/40 leading-relaxed">
-                Bridging theoretical physics and practical resource management,
-                addressing critical challenges in water security and mineral discovery.
+                From fundamental studies of magnetic minerals to applied exploration
+                solving real-world challenges in water security, mineral discovery,
+                and environmental protection.
               </p>
             </div>
 
-            <div className="space-y-16 md:space-y-0 md:grid md:grid-cols-3 md:gap-0 md:divide-x md:divide-white/5">
+            <div className="space-y-16 md:space-y-0 md:grid md:grid-cols-4 md:gap-0 md:divide-x md:divide-white/5">
               {[
                 {
-                  icon: Mountain,
+                  icon: Magnet,
                   num: "01",
-                  title: "Gold Exploration",
-                  desc: "Utilizing aeromagnetic and radiometric surveys to delineate potential gold-bearing ore bodies in the Kyerano and Sefwi belts of Ghana.",
+                  title: "Rock & Mineral Magnetism",
+                  desc: "Pioneering experimental studies on the magnetic properties of monoclinic pyrrhotite (Fe\u2087S\u2088), establishing fundamental models for domain structures, coercive force, and magnetisation processes.",
+                },
+                {
+                  icon: Mountain,
+                  num: "02",
+                  title: "Mineral Exploration",
+                  desc: "Applying aeromagnetic, radiometric, and gravity surveys to delineate gold-bearing ore bodies in the Kyerano and Sefwi belts, and across the Kibi-Winneba belt of Ghana.",
                 },
                 {
                   icon: Droplets,
-                  num: "02",
-                  title: "Groundwater",
-                  desc: "Applying electrical resistivity and borehole geophysics to site sustainable water sources for rural communities across Ghana.",
+                  num: "03",
+                  title: "Groundwater Exploration",
+                  desc: "Using electrical resistivity, electromagnetic methods, and borehole geophysics to locate sustainable water sources for rural communities across Ghana.",
                 },
                 {
                   icon: Globe,
-                  num: "03",
-                  title: "Environmental",
-                  desc: "Mapping contaminant plumes and monitoring groundwater movement to assess environmental risks from mining and industrial activities.",
+                  num: "04",
+                  title: "Environmental Geophysics",
+                  desc: "Mapping contaminant plumes, characterising solid waste deposits using spectral induced polarisation, and assessing environmental risks from mining and industrial activities.",
                 },
               ].map((card, i) => (
                 <div
                   key={i}
                   data-animate
-                  className="group relative px-8 md:px-10"
+                  className="group relative px-6 md:px-8"
                 >
                   <span className="text-[#c8a44e]/20 text-xs font-mono tracking-wider">{card.num}</span>
                   <div className="mt-4 mb-5 flex items-center gap-3">
                     <card.icon className="w-5 h-5 text-[#c8a44e]/60" />
-                    <h3 className="text-xl font-light text-white">{card.title}</h3>
+                    <h3 className="text-lg font-light text-white">{card.title}</h3>
                   </div>
-                  <p className="text-white/35 leading-relaxed text-[15px]">{card.desc}</p>
+                  <p className="text-white/35 leading-relaxed text-[14px]">{card.desc}</p>
                   <div className="mt-6 h-px w-12 bg-gradient-to-r from-[#c8a44e]/30 to-transparent group-hover:w-full transition-all duration-700" />
                 </div>
               ))}
+            </div>
+
+            {/* Methodologies */}
+            <div className="mt-24 pt-16 border-t border-white/5">
+              <div data-animate className="mb-10">
+                <span className="text-[#c8a44e]/40 text-xs tracking-[0.2em] uppercase">Methodologies</span>
+                <h3 className="text-2xl font-light text-white tracking-tight mt-3">Geophysical Techniques</h3>
+              </div>
+              <div data-animate className="flex flex-wrap gap-3">
+                {[
+                  "Aeromagnetic Surveys", "Radiometric Surveys", "Electrical Resistivity Tomography",
+                  "Time-Domain Induced Polarisation", "Borehole Geophysics", "Gravity Surveys",
+                  "Electromagnetic Methods", "X-Ray Diffraction", "Magnetic Measurements",
+                ].map((method, i) => (
+                  <span key={i} className="px-4 py-2 rounded-full border border-white/5 text-white/30 text-xs tracking-wider hover:border-[#c8a44e]/20 hover:text-white/50 transition-colors">
+                    {method}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* International Collaborations */}
+            <div className="mt-16 pt-16 border-t border-white/5">
+              <div data-animate className="mb-10">
+                <span className="text-[#c8a44e]/40 text-xs tracking-[0.2em] uppercase">Collaborations</span>
+                <h3 className="text-2xl font-light text-white tracking-tight mt-3">International Research Network</h3>
+              </div>
+              <div data-animate className="grid grid-cols-2 md:grid-cols-5 gap-0 divide-x divide-white/5">
+                {[
+                  { inst: "Newcastle upon Tyne", country: "United Kingdom" },
+                  { inst: "LMU Munich", country: "Germany" },
+                  { inst: "Duke University", country: "USA" },
+                  { inst: "University of Toronto", country: "Canada" },
+                  { inst: "ICDP Lake Bosumtwi", country: "International" },
+                ].map((collab, i) => (
+                  <div key={i} className="px-4 md:px-6 py-3 md:py-0">
+                    <div className="text-white/60 text-sm">{collab.inst}</div>
+                    <div className="text-white/20 text-xs mt-0.5">{collab.country}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -285,10 +332,10 @@ export default function Home() {
             <div data-animate className="relative">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
                 {[
-                  { value: "517", suffix: "+", label: "Total Citations" },
-                  { value: "12", suffix: "", label: "h-index" },
+                  { value: "35", suffix: "+", label: "Publications" },
+                  { value: "12000", suffix: "+", label: "ResearchGate Reads" },
+                  { value: "20", suffix: "+", label: "Graduate Students" },
                   { value: "40", suffix: "+", label: "Years of Service" },
-                  { value: "800", suffix: "k", label: "Grants Secured ($)" },
                 ].map((stat, i) => (
                   <div
                     key={i}

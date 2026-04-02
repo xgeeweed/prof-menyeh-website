@@ -273,8 +273,31 @@ export default function Publications() {
             <div className="space-y-8">
               <h2 className="text-3xl font-light text-white tracking-tight">Research Impact</h2>
               <p className="text-white/45 text-lg leading-relaxed">
-                Over three decades of contributions to mineral magnetism, geophysical exploration, and environmental geophysics. His pioneering work on monoclinic pyrrhotite has been cited extensively, establishing him as a leading authority in rock and mineral magnetism.
+                Over three decades of contributions across four research pillars: rock and mineral magnetism, geophysical exploration for minerals, groundwater exploration, and environmental geophysics. His pioneering work on monoclinic pyrrhotite has been cited extensively in major international reference works.
               </p>
+
+              {/* Topic distribution */}
+              <div className="mt-8 pt-8 border-t border-white/5">
+                <p className="text-white/25 text-xs tracking-[0.15em] uppercase mb-6">Publication Distribution by Research Area</p>
+                <div className="space-y-3">
+                  {[
+                    { area: "Rock & Mineral Magnetism", count: 11, pct: 31 },
+                    { area: "Mineral Exploration", count: 8, pct: 22 },
+                    { area: "Groundwater Exploration", count: 7, pct: 19 },
+                    { area: "Environmental Geophysics", count: 5, pct: 14 },
+                    { area: "Lake Bosumtwi Studies", count: 4, pct: 11 },
+                    { area: "Rock Properties", count: 3, pct: 8 },
+                  ].map((topic, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <span className="text-white/40 text-sm w-[220px] shrink-0">{topic.area}</span>
+                      <div className="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
+                        <div className="h-full bg-[#c8a44e]/40 rounded-full" style={{ width: `${topic.pct}%` }} />
+                      </div>
+                      <span className="text-white/25 text-xs w-8 text-right">{topic.count}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>

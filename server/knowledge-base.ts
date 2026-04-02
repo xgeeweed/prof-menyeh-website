@@ -63,7 +63,13 @@ Professor Menyeh held numerous significant administrative positions at KNUST:
 
 ## Research Focus and Specializations
 
-### Rock and Mineral Magnetism
+Professor Menyeh's research encompasses four distinct pillars:
+1. Rock and Mineral Magnetism
+2. Geophysical Exploration for Minerals
+3. Groundwater Exploration
+4. Environmental Geophysics
+
+### Pillar 1: Rock and Mineral Magnetism
 
 Professor Menyeh is internationally recognized for his pioneering research on monoclinic pyrrhotite (Fe₇S₈), an iron sulfide mineral crucial for paleomagnetism and gold exploration. His key contributions include:
 
@@ -89,7 +95,7 @@ Professor Menyeh is internationally recognized for his pioneering research on mo
 - Investigated isothermal remanent magnetization (IRM) behavior
 - Established pyrrhotite's importance as a carrier of magnetic remanence in geological samples
 
-### Geophysical Exploration for Groundwater and Economic Minerals
+### Pillars 2-4: Geophysical Exploration for Minerals, Groundwater, and Environmental Geophysics
 
 Professor Menyeh applies geophysical techniques to address critical resource challenges in Ghana:
 
