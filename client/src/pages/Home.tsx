@@ -43,42 +43,9 @@ function AnimatedCounter({ value, suffix = "" }: { value: string; suffix?: strin
 }
 
 export default function Home() {
-  const heroTextRef = useRef<HTMLDivElement>(null);
-  const heroSubRef = useRef<HTMLParagraphElement>(null);
-  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
-    // Hero text entrance
-    const tl = gsap.timeline({ delay: 0.3 });
-    if (heroTextRef.current) {
-      tl.fromTo(
-        heroTextRef.current.children,
-        { y: 80, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.2, ease: "power3.out", stagger: 0.15 }
-      );
-    }
-    if (heroSubRef.current) {
-      tl.fromTo(
-        heroSubRef.current,
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
-        "-=0.6"
-      );
-    }
-
-    // Scroll indicator pulse
-    if (scrollIndicatorRef.current) {
-      gsap.to(scrollIndicatorRef.current, {
-        y: 8,
-        opacity: 0.4,
-        duration: 1.5,
-        ease: "power1.inOut",
-        repeat: -1,
-        yoyo: true,
-      });
-    }
-
     // Scroll-triggered section animations
     sectionRefs.current.forEach((section) => {
       if (!section) return;
@@ -125,23 +92,22 @@ export default function Home() {
           <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#050d1a]/40 via-transparent to-[#050d1a]/40" />
 
           {/* Hero content */}
-          <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-            <div ref={heroTextRef}>
-              <p className="text-[#c8a44e] text-sm md:text-base font-medium tracking-[0.3em] uppercase mb-8 opacity-0">
+          <div className="relative z-10 text-center max-w-5xl mx-auto px-6 -mt-[20vh]">
+            <div>
+              <p className="text-[#c8a44e] text-sm md:text-base font-medium tracking-[0.3em] uppercase mb-8">
                 Professor Aboagye Menyeh
               </p>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[1.05] tracking-tight mb-4 opacity-0">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[1.05] tracking-tight mb-4">
                 Pioneering
               </h1>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[1.05] tracking-tight opacity-0">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white leading-[1.05] tracking-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c8a44e] via-[#e8d5a0] to-[#c8a44e]">
                   Geophysics
                 </span>
               </h1>
             </div>
             <p
-              ref={heroSubRef}
-              className="text-lg md:text-xl text-white/50 mt-8 max-w-2xl mx-auto leading-relaxed font-light opacity-0"
+              className="text-lg md:text-xl text-white/50 mt-8 max-w-2xl mx-auto leading-relaxed font-light"
             >
               Uncovering the magnetic secrets of the Earth to power exploration,
               sustainability, and scientific advancement in Ghana and beyond.
@@ -163,15 +129,29 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Scroll indicator */}
-          <div
-            ref={scrollIndicatorRef}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-          >
-            <span className="text-white/30 text-xs tracking-[0.2em] uppercase">Scroll</span>
-            <ArrowDown className="h-4 w-4 text-white/30" />
+          {/* Professor portrait — blended into the globe arc, below buttons */}
+          <div className="absolute bottom-[-80px] left-1/2 -translate-x-1/2 z-[2] w-[340px] sm:w-[420px] md:w-[500px] pointer-events-none">
+            <div className="relative">
+              <img
+                src="/images/prof-portrait.jpg"
+                alt="Professor Aboagye Menyeh"
+                className="w-full mix-blend-luminosity opacity-[0.5] brightness-[0.6]"
+                style={{
+                  maskImage: "radial-gradient(ellipse 70% 65% at 50% 40%, black 30%, transparent 70%)",
+                  WebkitMaskImage: "radial-gradient(ellipse 70% 65% at 50% 40%, black 30%, transparent 70%)",
+                }}
+              />
+            </div>
           </div>
+
+          {/* Scroll indicator */}
         </section>
+
+        {/* Scroll indicator — between hero and research */}
+        <div className="flex flex-col items-center gap-2 py-12 bg-gradient-to-b from-[#050d1a] to-[#0a1628]">
+          <span className="text-white/30 text-xs tracking-[0.2em] uppercase">Scroll</span>
+          <ArrowDown className="h-4 w-4 text-white/30" />
+        </div>
 
         {/* ── RESEARCH FOCUS ── */}
         <section
