@@ -63,20 +63,33 @@ export function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10">
-        <div className="flex h-20 items-center justify-between">
-          {/* Logo / Brand name */}
-          <Link href="/" className="flex items-center gap-3 group">
+      {/* Tagline — fixed far right, outside nav container */}
+      <div
+        className={`hidden lg:block fixed top-6 right-8 z-50 text-right leading-snug tracking-wider ${
+          isHome ? "text-white/50" : "text-muted-foreground"
+        }`}
+      >
+        <div className="text-base font-medium">Geophysics &</div>
+        <div className="text-base font-medium">Earth Sciences</div>
+        <div className="text-xs font-normal mt-1 tracking-wide">KNUST, Ghana</div>
+      </div>
+
+      <div className="px-6 md:px-10">
+        <div className="flex h-20 items-center">
+          {/* Logo / Brand name — far left */}
+          <Link href="/" className="flex items-center gap-3 group mr-10">
             <span
-              className={`text-lg font-semibold tracking-[0.25em] uppercase transition-colors duration-300 ${
+              className={`text-lg font-semibold tracking-[0.25em] uppercase transition-colors duration-300 whitespace-nowrap ${
                 isHome ? "text-white" : "text-foreground"
               }`}
             >
-              Prof. A. Menyeh
+              Prof.&nbsp;A.&nbsp;Menyeh
             </span>
           </Link>
 
-          {/* Desktop Navigation - centered */}
+          <div className="flex-1" />
+
+          {/* Desktop Navigation — centered */}
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
@@ -100,13 +113,10 @@ export function Navigation() {
                 />
               </Link>
             ))}
-          </div>
 
-          {/* Right side - search + tagline */}
-          <div className="hidden lg:flex items-center gap-6">
             <button
               onClick={() => setIsSearchOpen(true)}
-              className={`p-2 rounded-full transition-colors duration-300 ${
+              className={`ml-2 p-2 rounded-full transition-colors duration-300 ${
                 isHome
                   ? "text-white/40 hover:text-white/80"
                   : "text-muted-foreground hover:text-foreground"
@@ -114,16 +124,9 @@ export function Navigation() {
             >
               <Search className="h-4 w-4" />
             </button>
-            <div
-              className={`text-right text-xs leading-tight tracking-wide ${
-                isHome ? "text-white/40" : "text-muted-foreground"
-              }`}
-            >
-              <div>Geophysics &</div>
-              <div>Earth Sciences</div>
-              <div>KNUST, Ghana</div>
-            </div>
           </div>
+
+          <div className="flex-1 hidden lg:block" />
 
           {/* Mobile - search + hamburger */}
           <div className="flex items-center gap-2 lg:hidden">
